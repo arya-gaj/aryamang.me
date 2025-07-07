@@ -44,7 +44,8 @@
       color: #c0c0c0;
     }
 
-    .navbar-link:hover, .navbar-link:focus {
+    .navbar-link:hover,
+    .navbar-link:focus {
       color: #00d2be;
     }
 
@@ -62,6 +63,16 @@
 
     .navbar-item.dropdown:not(:hover):not(:focus) > .navbar-link {
       color: #c0c0c0;
+    }
+
+    /* MERCEDES PETRONAS COLOR for ALL icons */
+    ion-icon {
+      color: #00d2be;
+      transition: color 0.2s ease-in-out;
+    }
+
+    ion-icon:hover {
+      color: #00b0a0;
     }
   </style>
 </head>
@@ -96,14 +107,6 @@
               <a href="mailto:arya-gaj@proton.me" class="contact-link">arya-gaj@proton.me</a>
             </div>
           </li>
-          <!-- Commenting out the phone number section -->
-          <!-- <li class="contact-item">
-            <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-              <a href="tel:+19253644341" class="contact-link">+1 (925) 364-4341</a>
-            </div>
-          </li> -->
           <li class="contact-item">
             <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
             <div class="contact-info">
@@ -127,8 +130,8 @@
       <nav class="navbar">
         <ul class="navbar-list">
           <li class="navbar-item"><a href="#" class="navbar-link active" id="about-link" onclick="showPage('about')">About</a></li>
-          <li class="navbar-item"><a href="https://docs.google.com/document/d/1lDexqeJFeLoX0bnzexVo3iJmqiZc_pCp/edit?usp=sharing&ouid=109558952494515266103&rtpof=true&sd=true" class="navbar-link">Résumé</a></li>
-           <li class="navbar-item"><a href="https://github.com/arya-gaj/" class="navbar-link">GitHub</a></li>
+          <li class="navbar-item"><a href="https://docs.google.com/document/d/1lDexqeJFeLoX0bnzexVo3iJmqiZc_pCp/edit?usp=sharing" class="navbar-link">Résumé</a></li>
+          <li class="navbar-item"><a href="https://github.com/arya-gaj/" class="navbar-link">GitHub</a></li>
           <li class="navbar-item"><a href="https://www.linkedin.com/in/arya-gaj/" class="navbar-link">LinkedIn</a></li>
           <li class="navbar-item"><a href="#" class="navbar-link" id="contact-link" onclick="showPage('contact')">Contact</a></li>
         </ul>
@@ -213,15 +216,10 @@
 
   <script>
     function showPage(page) {
-      // Remove active class from both links
       document.getElementById('about-link').classList.remove('active');
       document.getElementById('contact-link').classList.remove('active');
-
-      // Hide both sections
       document.querySelector('.about').classList.remove('active');
       document.querySelector('.contact').classList.remove('active');
-
-      // Add active class to the clicked link and show the corresponding section
       if (page === 'about') {
         document.getElementById('about-link').classList.add('active');
         document.querySelector('.about').classList.add('active');
